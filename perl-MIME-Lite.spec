@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	MIME
 %define	pnam	Lite
@@ -6,7 +10,8 @@ Summary(pl):	Modu³ perla MIME::Lite
 Name:		perl-MIME-Lite
 Version:	3.01
 Release:	1
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artisric
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b41eb689819775fd8df360458fc2d507
@@ -30,6 +35,8 @@ wiadomo¶ci w formacie MIME.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
