@@ -27,7 +27,7 @@ wiadomo¶ci w formacie MIME.
 
 %build
 perl Makefile.PL
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
