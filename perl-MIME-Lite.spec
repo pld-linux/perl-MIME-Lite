@@ -2,8 +2,8 @@
 Summary:	MIME-Lite perl module
 Summary(pl):	Modu³ perla MIME-Lite
 Name:		perl-MIME-Lite
-Version:	2.102
-Release:	2
+Version:	2.106
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
