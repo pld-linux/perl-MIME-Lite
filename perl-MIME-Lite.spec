@@ -5,11 +5,11 @@ Summary:	MIME::Lite perl module
 Summary(pl):	Modu³ perla MIME::Lite
 Name:		perl-MIME-Lite
 Version:	2.117
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-libnet
 BuildArch:	noarch
@@ -26,7 +26,8 @@ wiadomo¶ci w formacie MIME.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 %install
@@ -40,5 +41,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README docs/MIME/*
-%{perl_sitelib}/MIME/Lite.pm
+%{perl_vendorlib}/MIME/Lite.pm
 %{_mandir}/man3/*
