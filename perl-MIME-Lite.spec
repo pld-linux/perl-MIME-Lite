@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	MIME
-%define	pnam	Lite
+%define		pdir	MIME
+%define		pnam	Lite
 Summary:	MIME::Lite perl module
 Summary(pl):	Modu³ perla MIME::Lite
 Name:		perl-MIME-Lite
