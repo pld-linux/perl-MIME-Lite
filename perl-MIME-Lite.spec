@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	MIME
 %define	pnam	Lite
-%include	/usr/lib/rpm/macros.perl
 Summary:	MIME-Lite perl module
 Summary(pl):	Modu³ perla MIME-Lite
 Name:		perl-MIME-Lite
 Version:	2.117
-Release:	2
-
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -24,7 +23,7 @@ MIME-Lite jest prostym, samodzielnym modu³em s³u¿±cym do generowania
 wiadomo¶ci w formacie MIME.
 
 %prep
-%setup -q -n MIME-Lite-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
