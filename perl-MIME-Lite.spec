@@ -9,7 +9,7 @@ Summary:	MIME::Lite perl module
 Summary(pl):	Modu³ perla MIME::Lite
 Name:		perl-MIME-Lite
 Version:	3.01
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artisric
 Group:		Development/Languages/Perl
