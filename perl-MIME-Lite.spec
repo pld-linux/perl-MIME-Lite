@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	MIME
 %define	pnam	Lite
-Summary:	MIME-Lite perl module
-Summary(pl):	Modu³ perla MIME-Lite
+Summary:	MIME::Lite perl module
+Summary(pl):	Modu³ perla MIME::Lite
 Name:		perl-MIME-Lite
 Version:	2.117
 Release:	3
@@ -16,10 +16,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-MIME-Lite is a simple, standalone module for generating MIME messages.
+MIME::Lite is a simple, standalone module for generating MIME messages.
 
 %description -l pl
-MIME-Lite jest prostym, samodzielnym modu³em s³u¿±cym do generowania
+MIME::Lite jest prostym, samodzielnym modu³em s³u¿±cym do generowania
 wiadomo¶ci w formacie MIME.
 
 %prep
