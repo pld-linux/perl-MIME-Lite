@@ -6,7 +6,7 @@
 %define		pdir	MIME
 %define		pnam	Lite
 Summary:	MIME::Lite perl module
-Summary(pl):	Modu≥ perla MIME::Lite
+Summary(pl.UTF-8):   Modu≈Ç perla MIME::Lite
 Name:		perl-MIME-Lite
 Version:	3.01
 Release:	2
@@ -24,9 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 MIME::Lite is a simple, standalone module for generating MIME messages.
 
-%description -l pl
-MIME::Lite jest prostym, samodzielnym modu≥em s≥uø±cym do generowania
-wiadomo∂ci w formacie MIME.
+%description -l pl.UTF-8
+MIME::Lite jest prostym, samodzielnym modu≈Çem s≈Çu≈ºƒÖcym do generowania
+wiadomo≈õci w formacie MIME.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
