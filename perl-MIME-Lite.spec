@@ -6,7 +6,7 @@
 %define		pdir	MIME
 %define		pnam	Lite
 Summary:	MIME::Lite perl module
-Summary(pl.UTF-8):   Moduł perla MIME::Lite
+Summary(pl.UTF-8):	Moduł perla MIME::Lite
 Name:		perl-MIME-Lite
 Version:	3.01
 Release:	2
