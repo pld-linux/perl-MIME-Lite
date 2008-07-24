@@ -8,16 +8,26 @@
 Summary:	MIME::Lite perl module
 Summary(pl.UTF-8):	Moduł perla MIME::Lite
 Name:		perl-MIME-Lite
-Version:	3.01
-Release:	2
+Version:	3.021
+Release:	1
 # same as perl
 License:	GPL v1+ or Artisric
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b41eb689819775fd8df360458fc2d507
-BuildRequires:	rpm-perlprov >= 4.1-13
+# Source0-md5:	7b3f4b9b3f8a0023dbc62859ef9a775f
 BuildRequires:	perl-devel >= 1:5.8.0
+%if %{with tests}
+BuildRequires:	perl-Email-Date-Format
+BuildRequires:	perl-MIME-Types
+BuildRequires:	perl-Test-Pod >= 1.14
+BuildRequires:	perl-Test-Pod-Coverage >= 1.08
+%endif
 BuildRequires:	perl-libnet
+BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-Email-Date-Format
+Suggests:	perl-MailTools
+Suggests:	perl-MIME-Base64
+Suggests:	perl-MIME-Types
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,6 +42,7 @@ wiadomości w formacie MIME.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
+PERL_MM_USE_DEFAULT=yes \
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
@@ -40,15 +51,21 @@ wiadomości w formacie MIME.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+
+# package it or not?
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/MIME/changes.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README examples
+%doc README contrib
 %{perl_vendorlib}/MIME/Lite.pm
+%{_examplesdir}/%{name}
 %{_mandir}/man3/*
