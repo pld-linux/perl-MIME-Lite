@@ -33,10 +33,9 @@ wiadomości w formacie MIME.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
+PERL_MM_USE_DEFAULT=yes \
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor << END
-no
-END
+	INSTALLDIRS=vendor
 %{__make}
 
 %{?with_tests:%{__make} test}
