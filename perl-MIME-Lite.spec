@@ -16,7 +16,12 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	7b3f4b9b3f8a0023dbc62859ef9a775f
 BuildRequires:	perl-devel >= 1:5.8.0
-%{?with_tests:BuildRequires:	perl-Email-Date-Format}
+%if %{with tests}
+BuildRequires:	perl-Email-Date-Format
+BuildRequires:	perl-MIME-Types
+BuildRequires:	perl-Test-Pod >= 1.14
+BuildRequires:	perl-Test-Pod-Coverage >= 1.08
+%endif
 BuildRequires:	perl-libnet
 BuildRequires:	rpm-perlprov >= 4.1-13
 Suggests:	perl-MailTools
