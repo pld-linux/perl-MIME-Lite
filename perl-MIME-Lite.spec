@@ -15,9 +15,10 @@ License:	GPL v1+ or Artisric
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	7b3f4b9b3f8a0023dbc62859ef9a775f
-BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 1:5.8.0
+%{?with_tests:BuildRequires:	perl-Email-Date-Format}
 BuildRequires:	perl-libnet
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,22 +34,30 @@ wiadomości w formacie MIME.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
+	INSTALLDIRS=vendor << END
+no
+END
 %{__make}
 
 %{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+
+# package it or not?
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/MIME/changes.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README examples
+%doc README contrib
 %{perl_vendorlib}/MIME/Lite.pm
+%{_examplesdir}/%{name}
 %{_mandir}/man3/*
