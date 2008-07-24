@@ -8,13 +8,13 @@
 Summary:	MIME::Lite perl module
 Summary(pl.UTF-8):	Moduł perla MIME::Lite
 Name:		perl-MIME-Lite
-Version:	3.021
-Release:	1
+Version:	3.01
+Release:	2
 # same as perl
 License:	GPL v1+ or Artisric
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	7b3f4b9b3f8a0023dbc62859ef9a775f
+# Source0-md5:	b41eb689819775fd8df360458fc2d507
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-libnet
