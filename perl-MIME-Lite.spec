@@ -19,6 +19,10 @@ BuildRequires:	perl-devel >= 1:5.8.0
 %{?with_tests:BuildRequires:	perl-Email-Date-Format}
 BuildRequires:	perl-libnet
 BuildRequires:	rpm-perlprov >= 4.1-13
+Suggests:	perl-MailTools
+Suggests:	perl-MIME-Base64
+#Suggests:	perl-MIME-QuotedPrint
+Suggests:	perl-MIME-Types
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
