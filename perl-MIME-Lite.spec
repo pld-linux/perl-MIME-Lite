@@ -8,13 +8,13 @@
 Summary:	MIME::Lite - low-calorie MIME generator
 Summary(pl.UTF-8):	MIME::Lite - niskokaloryczny generator MIME
 Name:		perl-MIME-Lite
-Version:	3.021
-Release:	2
+Version:	3.024
+Release:	1
 # same as perl
 License:	GPL v1+ or Artisric
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/MIME/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	7b3f4b9b3f8a0023dbc62859ef9a775f
+# Source0-md5:	ca71d1d844f5c4f693e5079a2b4fa9a5
 URL:		http://search.cpan.org/dist/MIME-Lite/
 BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
